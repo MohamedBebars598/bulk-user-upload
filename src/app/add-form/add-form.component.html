@@ -1,0 +1,25 @@
+<div class="card flex justify-content-center">
+    <p-toast />
+    <p-fileUpload 
+        mode="basic" 
+        chooseLabel="Choose" 
+        chooseIcon="pi pi-upload"
+        name="demo[]" 
+        url="https://www.primefaces.org/cdn/api/upload.php" 
+        accept=".xlsx" 
+        maxFileSize="1000000" 
+        (onSelect)="onSelect($event)"
+         />
+            
+    <p-button [disabled]="isDimmed" label="Submit" (onClick)="submitForm()" />
+    <p-button label="Download Template" icon="pi pi-download" severity="secondary" (onClick)="downloadTemplate()" />
+
+</div>
+
+<div class="card flex justify-content-center">
+
+        <p-messages 
+    [(value)]="messages" 
+    [enableService]="false" 
+    [closable]="false" />
+</div>
